@@ -10,11 +10,11 @@ const Navbar = () => {
     let [open, setOpen] = useState(false);
 
   return (
-    <div className='z-50 w-full fixed top-0 left-0'>
+    <div className='z-50 fixed w-full top-0 left-0'>
         <div className='md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80
-         bg-transparent py-4 md:px-10 px-7'>
+        bg-transparent py-4 md:px-10 px-7'>
         <div className='cursor-pointer flex items-center'>
-        <img src='src/assets/images/Group 1.png' className='w-13 md:w-12 h-auto'/>
+        <img src='src/assets/images/Group 1.png' className='w-13 md:w-12 xl:w-20 h-auto'/>
         </div>
         <div onClick={()=>
             setOpen(!open)
@@ -25,7 +25,7 @@ const Navbar = () => {
             {    
                 Links.map((link)=>(
                     <li key={link.name} className='md:ml-8 text-base md:my-0 my-7'>
-                        <a href={link.link} className='text-white font-lexend font-semibold text-xs p-7 md:text-less hover:text-gray-400 duration-500'>{link.name}</a>
+                        <a href={link.link} className='text-white font-lexend font-semibold text-xs p-7 md:text-less xl:text-smbs hover:text-gray-400 duration-500'>{link.name}</a>
                     </li>
                 ))
             }
@@ -33,7 +33,7 @@ const Navbar = () => {
         </ul>
         <Button
                 title='Faça parte'
-                classname='bg-[#ff364e] w-40 text-white md:text-less md:w-28 2xl:text-base font-poppins py-2 px-6 rounded-2xl hover:bg-[#752932] duration-500 '
+                classname='bg-[#ff364e] w-40 text-white md:text-less md:w-28 2xl:text-base 2xl:w-36 font-poppins py-2 px-6 rounded-2xl hover:bg-[#802d37] duration-500 '
             />
         </div>
     </div>
