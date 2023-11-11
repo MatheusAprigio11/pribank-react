@@ -1,7 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../Button/Button';
 
 const Navbar = () => {
+
+    const [scrolling, setScrolling] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
     let Links = [
         {name: "Transferências Pix", link:"/"},
         {name: "Nossos Serviços", link:"/"},
@@ -10,9 +28,13 @@ const Navbar = () => {
     let [open, setOpen] = useState(false);
 
   return (
-    <div className='z-50 fixed w-full top-0 left-0'>
-        <div className='md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80
-        bg-transparent py-4 md:px-10 px-7'>
+    <div
+      className={`z-50 fixed w-full h-9 top-0 left-0 `}
+    >
+        <div className={`md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80
+        bg-transparent py-4 md:px-10 px-7 transition-all duration-500 ${
+            scrolling ? 'bg-[#1d0f10] h-20' : 'bg-transparent'
+          }`}>
         <div className='cursor-pointer flex items-center'>
         <img src='src/assets/images/Group 1.png' className='w-13 md:w-12 xl:w-20 h-auto'/>
         </div>
