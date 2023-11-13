@@ -5,7 +5,8 @@ import './index.css'
 import HomeScreen from './Screens/HomeScreen/HomeScreen.jsx';
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Header from './Components/Header/Header.jsx';
-import Footer from './Components/Footer/Footer.jsx';
+import CardService from './Components/CardService/CardService.jsx';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
