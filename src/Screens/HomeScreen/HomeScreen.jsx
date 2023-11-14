@@ -8,7 +8,7 @@ import { PiPiggyBankThin } from 'react-icons/pi'
 const HomeScreen = () => {
   return (
     
-    <div>
+    <div className='bg-[#f2f0f0]'>
       <Card />
 
       <CardTwo />
@@ -34,6 +34,7 @@ const HomeScreen = () => {
         text='Receba, movimente e guarde seu dinheiro de um jeito simples e com rendimento maior que a poupança.'
         />
       </div>
+      <h1 className='font-lexend font-semibold text-[30px] mt-28 pb-40 flex justify-center'>Possui alguma dúvida? <span className='text-[#ff364e] cursor-pointer ml-2'>contate-nos!</span></h1>
     </div>
   )
 }

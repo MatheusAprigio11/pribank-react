@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = () => {
   return (
-    <div className='flex pb-24'>
+    <div className='flex pb-24 bg-[#f2f0f0]'>
         <div className='pl-24 pt-24'>
             <img src='src/assets/images/card1.png' className='w-[587px]'></img>
         </div>

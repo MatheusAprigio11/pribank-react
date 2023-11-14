@@ -23,6 +23,7 @@ export default {
     },
     backgroundImage:{
       'heroImg': "url('src/assets/images/banner.png')",
+      'logo-white': "url('src/assets/images/banner.png')",
     },
   plugins: [],
   }

@@ -33,7 +33,7 @@ const Navbar = () => {
     >
         <div className={`md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80
         bg-transparent py-4 md:px-10 px-7 transition-all duration-500 ${
-            scrolling ? 'bg-[#201011] h-20' : 'bg-transparent'
+            scrolling ? 'bg-gray-950 h-20' : 'bg-transparent'
           }`}>
         <div className='cursor-pointer flex items-center'>
         <img src='src/assets/images/Group 1.png' className='w-13 md:w-12 xl:w-20 h-auto'/>
