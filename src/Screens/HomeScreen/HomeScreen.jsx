@@ -13,11 +13,11 @@ const HomeScreen = () => {
 
       <CardTwo />
 
-      <h1 className='font-lexend font-semibold pl-[13.7rem] text-3xl mt-24 '>Conheca nossos <span className='text-[#ff364e]'>outros serviços</span></h1>
+      <h1 className='font-lexend font-semibold xl:pl-[13.7rem] xl:text-left text-3xl mt-24 md:pl-0 md:text-center'>Conheca nossos <span className='text-[#ff364e]'>outros serviços</span></h1>
 
-      <div className="w-[391px] h-[0px] border-2 rounded-sm border-rose-500 mb-14 ml-[13.79rem]"></div>
+      <div className="w-[391px] h-[0px] border-2 rounded-sm border-rose-500 mb-14 xl:ml-[13.79rem] md:ml-[8.7rem] lg:ml-[16.5rem]"></div>
 
-      <div className='flex items-center justify-center gap-28'>
+      <div className='flex lg:flex-row md:items-center md:justify-center md:gap-14 md:flex-col'>
         <CardService 
         url='src/assets/images/pig.png'
         title='Caixinhas'

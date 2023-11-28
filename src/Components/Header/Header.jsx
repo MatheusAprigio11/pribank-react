@@ -12,7 +12,7 @@ const Header = () => {
           <h1>Seja <span className='text-[#ff364e]'>Pri</span>Bank</h1>
           <Button 
             title={"Saiba Mais"}
-            classname={"bg-[#ff364e] rounded-2xl duration-500 hover:bg-[#c43949]  2xl:text-base 2xl:w-36 2xl:h-10 2xl:text-1xl font-lexend h-7 w-24"}
+            classname={"bg-[#ff364e] rounded-2xl duration-500 hover:bg-[#c43949]  2xl:text-base 2xl:w-36 2xl:h-10 2xl:text-1xl xl:text-sm lg:h-10 lg:w-28 md:text-base lg:text-base font-lexend h-7 w-24"}
           />
         </div>
       </div>
