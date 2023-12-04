@@ -13,7 +13,7 @@ import { BsApple } from 'react-icons/bs'
 
 function Footer() {
   return (
-    <div>
+    <div id="footerSess">
       <div>
         <footer className="bg-[#333333] p-[50px] flex flex-col text-white h-auto">
           <div className="flex flex-row justify-between"> {/*#imagens*/}

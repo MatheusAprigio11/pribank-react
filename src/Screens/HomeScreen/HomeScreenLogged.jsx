@@ -2,14 +2,14 @@ import React from 'react'
 import Card from '../../Components/Cards/Card'
 import CardTwo from '../../Components/Cards/CardTwo'
 import CardService from '../../Components/CardService/CardService'
-import Navbar from '../../Components/Navbar/Navbar'
 import Header from '../../Components/Header/Header'
+import NavbarLogged from '../../Components/Navbar/NavbarLogged'
 
-const HomeScreen = () => {
+const HomeScreenLogged = () => {
   return (
     
     <div className='bg-[#f2f0f0]'>
-      <Navbar />
+      <NavbarLogged />
       <Header />
       <Card />
 
@@ -41,4 +41,4 @@ const HomeScreen = () => {
   )
 }
 
-export default HomeScreen
+export default HomeScreenLogged

@@ -24,6 +24,7 @@ export default {
     backgroundImage:{
       'heroImg': "url('src/assets/images/banner.png')",
       'logo-white': "url('src/assets/images/banner.png')",
+      'gradient-to-b': 'linear-gradient(to bottom, #1f1f1f, #000)',
     },
   plugins: [],
   }

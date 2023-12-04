@@ -3,13 +3,38 @@ import Button from '../Button/Button';
 import instance from '../../services/axiosInstance';
 import LoginScreen from '../../Screens/LoginScreen';
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarLogged = () => {
+
+  const token = localStorage.getItem('token')
+  const [data, setData] = useState({})
+  const [loading, setLoading] = useState(true)
+
+
+  const fetchData = async () => {
+    try {
+      const cliente = await instance.get('/contas/', 
+        {
+          headers: {
+            'Authorization': `Token ${token}`
+          }
+        }
+    )
+    setData(cliente)
+    console.log(cliente.data[0].id_cliente.first_name)
+    setLoading(false)
+    } catch (error) {
+      console.log(error.response.data)
+
+    }
+
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   const [scrolling, setScrolling] = useState(false);
-  const [data, setData] = useState([])
-  const navigation = useNavigate()
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -27,30 +52,27 @@ const Navbar = () => {
   }, []);
 
     let Links = [
-        {name: "Transferências Pix", link:"#pix"},
-        {name: "Nossos Serviços", link:"#servicos"},
-        {name: "Contate-nos", link:"#footerSess"},
+      {name: "Transferências Pix", link:"#pix"},
+      {name: "Nossos Serviços", link:"#servicos"},
+      {name: "Contate-nos", link:"#footerSess"},
     ];
     let [open, setOpen] = useState(false);
 
 
 
-  const getClientes = async () => {
-    try{
-      const cliente = await instance.get('/clientes')
-      console.log(cliente.data[0].nome)
-      setData(cliente.data)
-    }catch(err){
-      console.log(err)
-    }
-  }    
+
 
   return (
-    <div
+    loading ? (
+      <div>
+
+
+      </div>
+    ) : (
+      <div
       className={`z-50 fixed w-full h-9 top-0 left-0 `}
-      onClick={getClientes}
     >
-        <div className={`md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80 py-4 md:px-10 px-7 transition-all duration-500 bg-transparent ${scrolling ? 'bg-[#300d11] h-20' : 'bg-transparent'}`}>
+        <div className={`md:flex flex items-center justify-center md:gap-10 lg:gap-16 xl:gap-36 2xl:gap-80 py-4 md:px-10 px-7 transition-all duration-500 bg-transparent ${scrolling ? 'bg-[#200609] h-20' : 'bg-transparent'}`}>
         <div className='cursor-pointer flex items-center sm:pr-32 md:pr-0 lg:pr-0 '>
         <img src='src/assets/images/Group 1.png' className='w-13 md:w-12 xl:w-20 h-auto'/>
         </div>
@@ -70,17 +92,14 @@ const Navbar = () => {
             
         </ul>
         <div className='sm:pr-60 md:pr-0'>
-        <Link to="/login">
-        <Button
-                title='Login'
-                classname=' bg-[#ff364e] w-40 text-white md:text-smbs md:w-32 2xl:text-base 2xl:w-36 font-poppins py-2 px-6 rounded-2xl lg:text-smbs lg:w-32 hover:bg-[#802d37] duration-500 '
-            />
-        </Link>
+        <p className='text-white font-lexend font-semibold'>{data.data[0].id_cliente.first_name}</p> 
         </div>
         </div>
     </div>
+    )
+ 
   )
 }
 
-export default Navbar
+export default NavbarLogged
 
