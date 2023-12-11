@@ -9,12 +9,14 @@ const HomeScreen = () => {
   return (
     
     <div className='bg-[#f2f0f0]'>
+      {/* Usando todos os components na pagina Home */}
       <Navbar />
       <Header />
       <Card />
 
       <CardTwo />
-
+      
+      {/* TAILWIND CSS */}
       <h1 className='font-lexend font-semibold xl:pl-[13.7rem] xl:text-left text-3xl mt-24 md:pl-0 md:text-center'>Conheca nossos <span className='text-[#ff364e]'>outros serviços</span></h1>
 
       <div className="w-[391px] h-[0px] border-2 rounded-sm border-rose-500 mb-14 xl:ml-[13.79rem] md:ml-[8.7rem] lg:ml-[16.5rem]"></div>

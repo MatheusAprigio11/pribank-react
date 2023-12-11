@@ -13,14 +13,13 @@ function LoginScreen() {
 
     const navigation = useNavigate()
 
-
+    //Função que verifica se as credenciais estão corretas na API
     const makeLogin = async () => {
         if (CPF.length == 0 || senha.length == 0) {
             setError('Inputs não podem ser vazios')
             return
         }
         try {
-            console.log('Entreeei')
             const authToken = await axiosInstance.post('/authtoken/login/', {
                 cpf: CPF,
                 password: senha
@@ -32,10 +31,6 @@ function LoginScreen() {
             
         }
 
-    }
-
-    const testando = ( ) => {
-        console.log('testadkej')
     }
 
     return (

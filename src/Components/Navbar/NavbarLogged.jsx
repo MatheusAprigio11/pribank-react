@@ -1,16 +1,15 @@
+// Importa os hooks useState e useEffect do React, além do axiosInstance 
 import { useState, useEffect } from 'react';
-import Button from '../Button/Button';
 import instance from '../../services/axiosInstance';
-import LoginScreen from '../../Screens/LoginScreen';
-import { Link } from 'react-router-dom';
 
 const NavbarLogged = () => {
 
+  // Obtém o token do localStorage
   const token = localStorage.getItem('token')
   const [data, setData] = useState({})
   const [loading, setLoading] = useState(true)
 
-
+// Função assíncrona para buscar dados do servidor usando axios
   const fetchData = async () => {
     try {
       const cliente = await instance.get('/contas/', 
@@ -29,7 +28,7 @@ const NavbarLogged = () => {
     }
 
   }
-
+// Efeito colateral para chamar a função fetchData quando o componente é montado
   useEffect(() => {
     fetchData()
   }, [])
@@ -51,6 +50,7 @@ const NavbarLogged = () => {
     };
   }, []);
 
+  // Links da barra de navegação
     let Links = [
       {name: "Transferências Pix", link:"#pix"},
       {name: "Nossos Serviços", link:"#servicos"},
@@ -64,7 +64,7 @@ const NavbarLogged = () => {
 
   return (
     loading ? (
-      <div>
+      <div> 
 
 
       </div>
@@ -92,7 +92,7 @@ const NavbarLogged = () => {
             
         </ul>
         <div className='sm:pr-60 md:pr-0'>
-        <p className='text-white font-lexend font-semibold'>{data.data[0].id_cliente.first_name}</p> 
+        <p className='text-white font-lexend font-semibold'>Olá, {data.data[0].id_cliente.first_name}</p> 
         </div>
         </div>
     </div>
